@@ -66,6 +66,11 @@ const Story = () => {
         window.location.reload();
     } 
 
+    const handleStoryClickNavigation = (title) => {
+      const formatedTitle = title.replaceAll(" ", "-");
+      navigate(`/story/${formatedTitle}`);
+    }
+
   return (
     <div className='mb-[211px]'>
 
@@ -109,7 +114,7 @@ const Story = () => {
                 <div className="mt-[64px] text-center">
                 <button
                     className="bg-[#FFA333] rounded-[16px] px-6 py-2 text-[16px] font-medium text-[#202020]"
-                   onClick={() => navigate(`/story/${data?.title}`)} // Navigate to Quiz page
+                   onClick={() => handleStoryClickNavigation(data?.title)}  // Navigate to Quiz page
                 >
                     Take Quiz
                 </button>
